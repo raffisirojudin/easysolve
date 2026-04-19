@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      EasySolve &#8212; 100+ Rumus Matematika, Fisika, Kimia &amp; Lebih
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"
+    ></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <div class="logo" onclick="showPage('home')">
+          <span class="logo-icon">&#8721;</span>
+          <div class="logo-text">
+            <span class="logo-name">EasySolve</span>
+            <span class="logo-tagline">100+ Rumus Siap Hitung</span>
+          </div>
+        </div>
+        <nav class="main-nav">
+          <button
+            class="nav-btn active"
+            onclick="
+              setNavActive(this);
+              showPage('home');
+            "
+          >
+            &#127968; Beranda
+          </button>
+          <button
+            class="nav-btn"
+            onclick="
+              setNavActive(this);
+              showCategoryPage('matematika');
+            "
+          >
+            &#128208; Matematika
+          </button>
+          <button
+            class="nav-btn"
+            onclick="
+              setNavActive(this);
+              showCategoryPage('fisika');
+            "
+          >
+            &#9889; Fisika
+          </button>
+          <button
+            class="nav-btn"
+            onclick="
+              setNavActive(this);
+              showCategoryPage('kimia');
+            "
+          >
+            &#129514; Kimia
+          </button>
+          <button
+            class="nav-btn"
+            onclick="
+              setNavActive(this);
+              showCategoryPage('biologi');
+            "
+          >
+            &#127807; Biologi
+          </button>
+          <button
+            class="nav-btn"
+            onclick="
+              setNavActive(this);
+              showCategoryPage('konversi');
+            "
+          >
+            &#128260; Konversi
+          </button>
+          <button
+            class="nav-btn"
+            onclick="
+              setNavActive(this);
+              showCategoryPage('keuangan');
+            "
+          >
+            &#128176; Keuangan
+          </button>
+          <button
+            class="nav-btn"
+            onclick="
+              setNavActive(this);
+              showCategoryPage('geografi');
+            "
+          >
+            &#127758; Geografi
+          </button>
+          <button
+            class="nav-btn"
+            onclick="
+              setNavActive(this);
+              showPage('history');
+            "
+          >
+            &#128220; Riwayat
+          </button>
+        </nav>
+        <button class="hamburger" id="hamburger">&#9776;</button>
+      </div>
+      <div class="mobile-nav hidden" id="mobile-nav">
+        <button
+          onclick="
+            showPage('home');
+            closeMobileNav();
+          "
+        >
+          &#127968; Beranda
+        </button>
+        <button
+          onclick="
+            showCategoryPage('matematika');
+            closeMobileNav();
+          "
+        >
+          &#128208; Matematika
+        </button>
+        <button
+          onclick="
+            showCategoryPage('fisika');
+            closeMobileNav();
+          "
+        >
+          &#9889; Fisika
+        </button>
+        <button
+          onclick="
+            showCategoryPage('kimia');
+            closeMobileNav();
+          "
+        >
+          &#129514; Kimia
+        </button>
+        <button
+          onclick="
+            showCategoryPage('biologi');
+            closeMobileNav();
+          "
+        >
+          &#127807; Biologi
+        </button>
+        <button
+          onclick="
+            showCategoryPage('konversi');
+            closeMobileNav();
+          "
+        >
+          &#128260; Konversi
+        </button>
+        <button
+          onclick="
+            showCategoryPage('keuangan');
+            closeMobileNav();
+          "
+        >
+          &#128176; Keuangan
+        </button>
+        <button
+          onclick="
+            showCategoryPage('geografi');
+            closeMobileNav();
+          "
+        >
+          &#127758; Geografi
+        </button>
+        <button
+          onclick="
+            showPage('history');
+            closeMobileNav();
+          "
+        >
+          &#128220; Riwayat
+        </button>
+      </div>
+    </header>
+
+    <main id="page-home" class="page active">
+      <section class="hero">
+        <div class="hero-bg-shapes">
+          <div class="shape shape-1">&#960;</div>
+          <div class="shape shape-2">&#8747;</div>
+          <div class="shape shape-3">&#8730;</div>
+          <div class="shape shape-4">&#8721;</div>
+          <div class="shape shape-5">&#8734;</div>
+          <div class="shape shape-6">&#916;</div>
+        </div>
+        <div class="hero-content">
+          <div class="hero-badge">&#10022; 100+ Rumus dari 7 Kategori</div>
+          <h1 class="hero-title">
+            Borong Semua Rumus,<br /><span class="hero-accent"
+              >Kuasai Semuanya</span
+            >
+          </h1>
+          <p class="hero-subtitle">
+            Matematika, Fisika, Kimia, Biologi, Konversi, Keuangan &amp;
+            Geografi — lengkap dengan langkah pengerjaan.
+          </p>
+          <div class="search-wrap">
+            <span class="search-icon">&#128269;</span>
+            <input
+              type="text"
+              id="global-search"
+              class="search-input"
+              placeholder="Cari rumus... pythagoras, pH, IMT, BEP, haversine..."
+              autocomplete="off"
+            />
+            <button class="search-clear" id="search-clear-btn">&#10005;</button>
+          </div>
+          <div id="search-results-count" class="search-count hidden"></div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">Pilih Kategori</h2>
+        <div class="category-cards">
+          <div
+            class="cat-card cat-math"
+            onclick="showCategoryPage('matematika')"
+          >
+            <div class="cat-icon">&#128208;</div>
+            <h3>Matematika</h3>
+            <p>Bangun datar, ruang, trigonometri, statistik</p>
+            <span class="cat-count" id="count-matematika"></span>
+          </div>
+          <div
+            class="cat-card cat-physics"
+            onclick="showCategoryPage('fisika')"
+          >
+            <div class="cat-icon">&#9889;</div>
+            <h3>Fisika</h3>
+            <p>Gerak, gaya, energi, listrik, gelombang</p>
+            <span class="cat-count" id="count-fisika"></span>
+          </div>
+          <div class="cat-card cat-chem" onclick="showCategoryPage('kimia')">
+            <div class="cat-icon">&#129514;</div>
+            <h3>Kimia</h3>
+            <p>Mol, molaritas, pH, gas, termokimia</p>
+            <span class="cat-count" id="count-kimia"></span>
+          </div>
+          <div class="cat-card cat-bio" onclick="showCategoryPage('biologi')">
+            <div class="cat-icon">&#127807;</div>
+            <h3>Biologi</h3>
+            <p>IMT, denyut nadi, ekologi, populasi</p>
+            <span class="cat-count" id="count-biologi"></span>
+          </div>
+          <div
+            class="cat-card cat-convert"
+            onclick="showCategoryPage('konversi')"
+          >
+            <div class="cat-icon">&#128260;</div>
+            <h3>Konversi</h3>
+            <p>Suhu, panjang, berat, waktu, energi</p>
+            <span class="cat-count" id="count-konversi"></span>
+          </div>
+          <div
+            class="cat-card cat-finance"
+            onclick="showCategoryPage('keuangan')"
+          >
+            <div class="cat-icon">&#128176;</div>
+            <h3>Keuangan</h3>
+            <p>Bunga, diskon, pajak, kredit, ROI</p>
+            <span class="cat-count" id="count-keuangan"></span>
+          </div>
+          <div class="cat-card cat-geo" onclick="showCategoryPage('geografi')">
+            <div class="cat-icon">&#127758;</div>
+            <h3>Geografi</h3>
+            <p>Peta, kependudukan, jarak, zona waktu</p>
+            <span class="cat-count" id="count-geografi"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title" id="home-list-title">
+            &#128293; Semua Rumus
+          </h2>
+          <span class="section-subtitle" id="home-list-subtitle"
+            >Klik kartu untuk membuka kalkulator lengkap</span
+          >
+        </div>
+        <div class="formula-grid" id="home-formula-grid"></div>
+      </section>
+    </main>
+
+    <main id="page-category" class="page hidden">
+      <section class="section">
+        <div class="page-breadcrumb">
+          <span onclick="showPage('home')" class="breadcrumb-link"
+            >Beranda</span
+          >
+          <span class="breadcrumb-sep">&#8250;</span>
+          <span id="cat-breadcrumb-name">Kategori</span>
+        </div>
+        <div class="section-header">
+          <h2 class="section-title" id="category-page-title">Kategori</h2>
+          <p class="section-subtitle" id="category-page-desc"></p>
+        </div>
+        <div class="formula-grid" id="category-formula-grid"></div>
+      </section>
+    </main>
+
+    <main id="page-history" class="page hidden">
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">&#128220; Riwayat Perhitungan</h2>
+          <p class="section-subtitle">
+            10 perhitungan terakhir tersimpan otomatis di browser
+          </p>
+        </div>
+        <div class="history-actions">
+          <button class="btn-secondary" onclick="clearHistory()">
+            &#128465; Hapus Riwayat
+          </button>
+        </div>
+        <div id="history-list" class="history-list"></div>
+      </section>
+    </main>
+
+    <div
+      id="calculator-modal"
+      class="modal-overlay hidden"
+      role="dialog"
+      aria-modal="true"
+    >
+      <div class="modal-box" id="modal-content"></div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-logo">&#8721; EasySolve</div>
+        <p class="footer-tagline">
+          100+ rumus dari 7 mata pelajaran &#8212; lengkap dengan langkah
+          pengerjaan.
+        </p>
+        <div class="footer-links">
+          <span onclick="showCategoryPage('matematika')">Matematika</span>
+          <span onclick="showCategoryPage('fisika')">Fisika</span>
+          <span onclick="showCategoryPage('kimia')">Kimia</span>
+          <span onclick="showCategoryPage('biologi')">Biologi</span>
+          <span onclick="showCategoryPage('konversi')">Konversi</span>
+          <span onclick="showCategoryPage('keuangan')">Keuangan</span>
+          <span onclick="showCategoryPage('geografi')">Geografi</span>
+        </div>
+        <p class="footer-copy">
+          &#169; 2025 EasySolve &middot; Dibuat untuk pelajar Indonesia &#10084;
+        </p>
+      </div>
+    </footer>
+
+    <script src="src/logic/formulas.js"></script>
+    <script src="src/utils/validator.js"></script>
+    <script src="src/utils/formatter.js"></script>
+    <script src="src/logic/calculatorEngine.js"></script>
+    <script src="src/ui/domRenderer.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
